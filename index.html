@@ -338,6 +338,11 @@
     color: #4a5568;
   }
   .sel-btn-clear:hover { background: #e2e8f0; }
+  .memo-wrap { margin-top: 0.6rem; }
+  .memo-input { width: 100%; padding: 0.5rem 0.7rem; border: 1px solid #cbd5e0; border-radius: 8px; font-size: 0.88rem; font-family: inherit; resize: vertical; outline: none; }
+  .memo-input:focus { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(43,108,176,0.15); }
+  .sel-model { flex: 1; display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
+  .sel-brand { font-size: 0.75rem; color: var(--muted); font-weight: 600; }
   .selection-list {
     display: flex;
     flex-direction: column;
@@ -16144,6 +16149,9 @@
     </div>
   </div>
   <div class="selection-list" id="selectionList"></div>
+  <div class="memo-wrap">
+    <textarea class="memo-input" id="memoInput" rows="2" placeholder="메모 (예: 현장 납기 급함, PoE 같이)"></textarea>
+  </div>
 </div>
 
 <div class="copy-toast" id="copyToast">복사되었습니다! 네이버톡/카카오톡에 붙여넣기 하세요</div>
@@ -16260,60 +16268,145 @@
   searchInput.addEventListener('input', applySearch);
 })();
 
-// ===== 모델 선택 + 수량 + 복사 기능 =====
+// ===== 모델 선택 + 수량 + 복사 기능 (3번: 저장/브랜드/메모 - 공유/폼 버튼 제외) =====
 (function() {
-  const selection = {}; // { modelName: qty }
+  const selection = {};
+  const selectionBrand = {};
+  let memoText = '';
+  const STORAGE_KEY = 'quote_selection_v1';
 
   const panel = document.getElementById('selectionPanel');
   const listEl = document.getElementById('selectionList');
   const countEl = document.getElementById('selCount');
   const copyBtn = document.getElementById('copyBtn');
   const clearBtn = document.getElementById('clearBtn');
+  const memoInput = document.getElementById('memoInput');
   const toast = document.getElementById('copyToast');
+  const DEFAULT_TOAST = toast ? toast.textContent : '';
 
+  function showToast(msg) {
+    if (!toast) return;
+    if (msg) toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(function() {
+      toast.classList.remove('show');
+      if (msg) setTimeout(function() { toast.textContent = DEFAULT_TOAST; }, 300);
+    }, 2200);
+  }
+  function getBrandName(el) {
+    try {
+      let node = el.closest('.sub-section') || el.closest('.model-grid');
+      let cur = node ? node.previousElementSibling : null;
+      while (cur) {
+        if (cur.classList && cur.classList.contains('brand-header')) {
+          const h2 = cur.querySelector('h2');
+          return h2 ? h2.textContent.trim() : '';
+        }
+        cur = cur.previousElementSibling;
+      }
+      const section = el.closest('.section');
+      if (section) {
+        const h2 = section.querySelector('.brand-header h2');
+        if (h2) return h2.textContent.trim();
+      }
+    } catch (e) {}
+    return '';
+  }
+  function findBrandByName(name) {
+    const items = document.querySelectorAll('.model-item');
+    for (let i = 0; i < items.length; i++) {
+      if (getModelName(items[i]) === name) {
+        const b = getBrandName(items[i]);
+        if (b) return b;
+      }
+    }
+    return selectionBrand[name] || '';
+  }
+  function buildQuoteText() {
+    const keys = Object.keys(selection);
+    let text = '[견적 요청]\n';
+    keys.forEach(function(name) {
+      const brand = selectionBrand[name] || findBrandByName(name) || '';
+      const label = brand ? brand + ' / ' + name : name;
+      text += label + '  ×  ' + selection[name] + '\n';
+    });
+    if (memoText && memoText.trim()) text += '\n메모: ' + memoText.trim() + '\n';
+    text += '\n견적 요청 제품의 가격을 안내해 주세요.';
+    return text;
+  }
+  function saveSelection() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ selection: selection, brands: selectionBrand, memo: memoText })); } catch (e) {}
+  }
+  function loadFromUrl() {
+    try {
+      const params = new URLSearchParams(location.search);
+      const sel = params.get('sel');
+      if (!sel) return false;
+      const decoded = decodeURIComponent(sel);
+      Object.keys(selection).forEach(function(k) { delete selection[k]; });
+      Object.keys(selectionBrand).forEach(function(k) { delete selectionBrand[k]; });
+      if (decoded.trim().charAt(0) === '[') {
+        const arr = JSON.parse(decoded);
+        arr.forEach(function(it) {
+          if (!it || !it.n) return;
+          selection[it.n] = Math.min(999, Math.max(1, parseInt(it.q, 10) || 1));
+          if (it.b) selectionBrand[it.n] = it.b;
+        });
+      } else {
+        decoded.split('|').forEach(function(part) {
+          if (!part) return;
+          const idx = part.lastIndexOf(':');
+          if (idx === -1) return;
+          const n = part.slice(0, idx);
+          const q = Math.min(999, Math.max(1, parseInt(part.slice(idx + 1), 10) || 1));
+          if (n) selection[n] = q;
+        });
+      }
+      const m = params.get('memo');
+      if (m) memoText = decodeURIComponent(m);
+      return Object.keys(selection).length > 0;
+    } catch (e) { return false; }
+  }
+  function loadFromStorage() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      const data = JSON.parse(raw);
+      if (data.selection) Object.assign(selection, data.selection);
+      if (data.brands) Object.assign(selectionBrand, data.brands);
+      if (typeof data.memo === 'string') memoText = data.memo;
+    } catch (e) {}
+  }
   function renderSelection() {
     const keys = Object.keys(selection);
+    if (memoInput && memoInput.value !== memoText) memoInput.value = memoText;
     if (keys.length === 0) {
       panel.classList.remove('visible');
       listEl.innerHTML = '';
       countEl.textContent = '(0)';
-      // 모든 selected 표시 제거
-      document.querySelectorAll('.model-item.selected').forEach(el => {
+      document.querySelectorAll('.model-item.selected').forEach(function(el) {
         el.classList.remove('selected');
         const badge = el.querySelector('.add-badge');
         if (badge) badge.remove();
       });
+      saveSelection();
       return;
     }
-
     panel.classList.add('visible');
     countEl.textContent = '(' + keys.length + ')';
-
-    listEl.innerHTML = keys.map(name => {
+    listEl.innerHTML = keys.map(function(name) {
       const qty = selection[name];
-      return `
-        <div class="selection-item" data-name="${name}">
-          <span class="model-name">${name}</span>
-          <div class="qty-wrap">
-            <button class="qty-btn" data-action="minus">−</button>
-            <input type="number" class="qty-input" value="${qty}" min="1" max="999">
-            <button class="qty-btn" data-action="plus">+</button>
-          </div>
-          <button class="remove-btn" title="삭제">×</button>
-        </div>`;
+      const brand = selectionBrand[name] || findBrandByName(name) || '';
+      const brandHtml = brand ? '<span class="sel-brand">' + brand.replace(/</g, '&lt;') + '</span>' : '';
+      const safeName = name.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return '\n        <div class="selection-item" data-name="' + safeName + '">\n          <div class="sel-model">' + brandHtml + '<span class="model-name">' + safeName + '</span></div>\n          <div class="qty-wrap">\n            <button class="qty-btn" data-action="minus">−</button>\n            <input type="number" class="qty-input" value="' + qty + '" min="1" max="999">\n            <button class="qty-btn" data-action="plus">+</button>\n          </div>\n          <button class="remove-btn" title="삭제">×</button>\n        </div>';
     }).join('');
-
-    // 모델 아이템 selected 표시 동기화
-    document.querySelectorAll('.model-item').forEach(el => {
+    document.querySelectorAll('.model-item').forEach(function(el) {
       const name = getModelName(el);
       if (selection[name]) {
         el.classList.add('selected');
         let badge = el.querySelector('.add-badge');
-        if (!badge) {
-          badge = document.createElement('span');
-          badge.className = 'add-badge';
-          el.appendChild(badge);
-        }
+        if (!badge) { badge = document.createElement('span'); badge.className = 'add-badge'; el.appendChild(badge); }
         badge.textContent = selection[name];
       } else {
         el.classList.remove('selected');
@@ -16321,9 +16414,8 @@
         if (badge) badge.remove();
       }
     });
+    saveSelection();
   }
-
-  // 모델 아이템에서 뱃지를 제외한 순수 모델명 추출
   function getModelName(el) {
     const badge = el.querySelector('.add-badge');
     if (badge) {
@@ -16334,50 +16426,25 @@
     }
     return el.textContent.trim();
   }
-
-  // 모델 클릭 → 선택 추가/수량 증가
   document.addEventListener('click', function(e) {
     const item = e.target.closest('.model-item');
     if (!item) return;
-    // 검색 결과 숨김 상태면 무시
     if (item.classList.contains('hidden')) return;
-
     const name = getModelName(item);
     if (!name) return;
-
-    if (selection[name]) {
-      selection[name] = Math.min(999, selection[name] + 1);
-    } else {
-      selection[name] = 1;
-    }
+    if (!selectionBrand[name]) { const b = getBrandName(item); if (b) selectionBrand[name] = b; }
+    if (selection[name]) selection[name] = Math.min(999, selection[name] + 1);
+    else selection[name] = 1;
     renderSelection();
   });
-
-  // 패널 내 버튼 이벤트
   listEl.addEventListener('click', function(e) {
     const row = e.target.closest('.selection-item');
     if (!row) return;
     const name = row.dataset.name;
-
-    if (e.target.classList.contains('remove-btn')) {
-      delete selection[name];
-      renderSelection();
-      return;
-    }
-
-    if (e.target.dataset.action === 'plus') {
-      selection[name] = Math.min(999, (selection[name] || 1) + 1);
-      renderSelection();
-      return;
-    }
-    if (e.target.dataset.action === 'minus') {
-      selection[name] = Math.max(1, (selection[name] || 1) - 1);
-      renderSelection();
-      return;
-    }
+    if (e.target.classList.contains('remove-btn')) { delete selection[name]; delete selectionBrand[name]; renderSelection(); return; }
+    if (e.target.dataset.action === 'plus') { selection[name] = Math.min(999, (selection[name] || 1) + 1); renderSelection(); return; }
+    if (e.target.dataset.action === 'minus') { selection[name] = Math.max(1, (selection[name] || 1) - 1); renderSelection(); return; }
   });
-
-  // 수량 직접 입력
   listEl.addEventListener('change', function(e) {
     if (!e.target.classList.contains('qty-input')) return;
     const row = e.target.closest('.selection-item');
@@ -16389,52 +16456,34 @@
     selection[name] = val;
     renderSelection();
   });
-
-  // 전체 삭제
+  if (memoInput) memoInput.addEventListener('input', function() { memoText = memoInput.value; saveSelection(); });
   clearBtn.addEventListener('click', function() {
-    Object.keys(selection).forEach(k => delete selection[k]);
+    Object.keys(selection).forEach(function(k) { delete selection[k]; });
+    Object.keys(selectionBrand).forEach(function(k) { delete selectionBrand[k]; });
+    memoText = '';
+    if (memoInput) memoInput.value = '';
     renderSelection();
   });
-
-  // 복사하기
-  copyBtn.addEventListener('click', function() {
-    const keys = Object.keys(selection);
-    if (keys.length === 0) return;
-
-    let text = '[견적 요청]\n';
-    keys.forEach(name => {
-      text += name + '  ×  ' + selection[name] + '\n';
-    });
-    text += '\n견적 요청 제품의 가격을 안내해 주세요.';
-
-    // 클립보드 복사
+  function copyText(text, msg) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(showToast).catch(fallbackCopy);
-    } else {
-      fallbackCopy();
-    }
-
-    function fallbackCopy() {
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.style.position = 'fixed';
-      ta.style.left = '-9999px';
-      document.body.appendChild(ta);
-      ta.select();
-      try {
-        document.execCommand('copy');
-        showToast();
-      } catch (err) {
-        alert('복사에 실패했습니다. 아래 내용을 직접 복사해주세요:\n\n' + text);
-      }
-      document.body.removeChild(ta);
-    }
-
-    function showToast() {
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2200);
-    }
+      navigator.clipboard.writeText(text).then(function() { showToast(msg); }).catch(function() { fallbackCopy(text, msg); });
+    } else { fallbackCopy(text, msg); }
+  }
+  function fallbackCopy(text, msg) {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.left = '-9999px';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); showToast(msg); }
+    catch (err) { alert('복사에 실패했습니다. 아래 내용을 직접 복사해주세요:\n\n' + text); }
+    document.body.removeChild(ta);
+  }
+  copyBtn.addEventListener('click', function() {
+    if (Object.keys(selection).length === 0) return;
+    copyText(buildQuoteText(), null);
   });
+  const fromUrl = loadFromUrl();
+  if (!fromUrl) loadFromStorage();
+  renderSelection();
 })();
 
 </script>
