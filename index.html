@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>네트워크 장비 견적(가격) 요청 - 솔텍 / 시스코 / TP-Link / 아이피타임 / 화웨이 / HPE / 이지넷 / 인네트워크 / 넷기어 / APC(UPS) / 넥시 / 랜스타 / 대원TMT</title>
+<title>네트워크 장비 견적(가격) 요청 - 솔텍 / 시스코 / TP-Link / 아이피타임 / 화웨이 / HPE / 이지넷 / 인네트워크 / 넷기어 / APC(UPS) / 넥시 / 랜스타 / 대원TMT / 세이프네트웍</title>
 <style>
   :root {
     --primary: #1a365d;
@@ -21,6 +21,7 @@
     --nexi: #d69e2e;
     --lanstar: #38a169;
     --daewon: #b83280;
+    --safenetwork: #9a3412;
     --bg: #f7fafc;
     --card: #ffffff;
     --border: #e2e8f0;
@@ -139,6 +140,7 @@
   .tab-btn.nexi.active { background: var(--nexi); border-color: var(--nexi); }
   .tab-btn.lanstar.active { background: var(--lanstar); border-color: var(--lanstar); }
   .tab-btn.daewon.active { background: var(--daewon); border-color: var(--daewon); }
+  .tab-btn.safenetwork.active { background: var(--safenetwork); border-color: var(--safenetwork); }
   .section { display: none; }
   .section.active { display: block; }
   .brand-header {
@@ -162,6 +164,8 @@
   .brand-header.nexi { border-color: var(--nexi); }
   .brand-header.lanstar { border-color: var(--lanstar); }
   .brand-header.daewon { border-color: var(--daewon); }
+  .brand-header.safenetwork { border-color: var(--safenetwork); }
+  .brand-header.safenetwork ~ .sub-section h3 { color: var(--safenetwork); border-left-color: var(--safenetwork); }
   .brand-header h2 {
     font-size: 1.4rem;
   }
@@ -470,7 +474,7 @@
 <body>
 <header>
   <h1>네트워크 장비 견적(가격) 요청</h1>
-  <p>솔텍 · 시스코 · TP-Link · 아이피타임 · 화웨이 · HPE(아루바) · 이지넷(NEXT) · 인네트워크 · 넷기어 · APC(UPS) · 넥시(NEXI) · 랜스타(LANSTAR) · 대원TMT 제품 모델 종합</p>
+  <p>솔텍 · 시스코 · TP-Link · 아이피타임 · 화웨이 · HPE(아루바) · 이지넷(NEXT) · 인네트워크 · 넷기어 · APC(UPS) · 넥시(NEXI) · 랜스타(LANSTAR) · 대원TMT · 세이프네트웍(SAFE NETWORK) 제품 모델 종합</p>
   <div class="price-notice">총판 정책상 가격은 공개하지 않습니다. 모델 선택 후 문의하시면 <strong>1영업일 내 견적</strong> 드립니다.</div>
   <div class="stats">
     <span class="stat-badge">솔텍 289개</span>
@@ -486,7 +490,8 @@
     <span class="stat-badge">넥시 1313개</span>
     <span class="stat-badge">랜스타 1582개</span>
     <span class="stat-badge">대원TMT 632개</span>
-    <span class="stat-badge">총 7572개</span>
+    <span class="stat-badge">세이프네트웍 169개</span>
+    <span class="stat-badge">총 7741개</span>
   </div>
 </header>
 
@@ -538,6 +543,7 @@
     <button class="tab-btn nexi" data-tab="nexi">넥시</button>
     <button class="tab-btn lanstar" data-tab="lanstar">랜스타</button>
     <button class="tab-btn daewon" data-tab="daewon">대원TMT</button>
+    <button class="tab-btn safenetwork" data-tab="safenetwork">세이프네트웍</button>
     <button class="tab-btn" data-tab="all">전체</button>
   </div>
 
@@ -8364,6 +8370,413 @@
     </div>
   </div>
 
+  <!-- 세이프네트웍(SAFE NETWORK) — 엑셀 추가 / 원본 모델은 변경 없음 / 중첩 없는 평탄 구조 -->
+  <div class="section" id="section-safenetwork">
+    <div class="brand-header safenetwork">
+      <h2>세이프네트웍 (SAFE NETWORK)</h2>
+      <span class="count">169개</span>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 랙 본체 <span class="count">46개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="safe-6u">SAFE-6U</div>
+        <div class="model-item" data-model="safe-9u">SAFE-9U</div>
+        <div class="model-item" data-model="safe-4soho">SAFE-4SOHO</div>
+        <div class="model-item" data-model="safe-6soho">SAFE-6SOHO</div>
+        <div class="model-item" data-model="safe-9soho">SAFE-9SOHO</div>
+        <div class="model-item" data-model="hps-er5u (세로형랙)">HPS-ER5U (세로형랙)</div>
+        <div class="model-item" data-model="hps-er9u (세로형랙)">HPS-ER9U (세로형랙)</div>
+        <div class="model-item" data-model="safe-280h (cctv랙)">SAFE-280H (CCTV랙)</div>
+        <div class="model-item" data-model="hps-280h (cctv랙)">HPS-280H (CCTV랙)</div>
+        <div class="model-item" data-model="safe-09sp">SAFE-09SP</div>
+        <div class="model-item" data-model="safe-300h">SAFE-300H</div>
+        <div class="model-item" data-model="safe-500h">SAFE-500H</div>
+        <div class="model-item" data-model="safe-750h">SAFE-750H</div>
+        <div class="model-item" data-model="safe-1000h">SAFE-1000H</div>
+        <div class="model-item" data-model="safe-1200h">SAFE-1200H</div>
+        <div class="model-item" data-model="safe-1400h">SAFE-1400H</div>
+        <div class="model-item" data-model="safe-1600h">SAFE-1600H</div>
+        <div class="model-item" data-model="safe-1800h">SAFE-1800H</div>
+        <div class="model-item" data-model="safe-2000h">SAFE-2000H</div>
+        <div class="model-item" data-model="safe-2200h">SAFE-2200H</div>
+        <div class="model-item" data-model="safe-1200h-lcd">SAFE-1200H-LCD</div>
+        <div class="model-item" data-model="safe-1800h-lcd">SAFE-1800H-LCD</div>
+        <div class="model-item" data-model="safe-2000h-lcd">SAFE-2000H-LCD</div>
+        <div class="model-item" data-model="safe-1000h-t">SAFE-1000H-T</div>
+        <div class="model-item" data-model="safe-1200h-t">SAFE-1200H-T</div>
+        <div class="model-item" data-model="safe-1400h-t">SAFE-1400H-T</div>
+        <div class="model-item" data-model="safe-1600h-t">SAFE-1600H-T</div>
+        <div class="model-item" data-model="safe-1800h-t">SAFE-1800H-T</div>
+        <div class="model-item" data-model="safe-2000h-t">SAFE-2000H-T</div>
+        <div class="model-item" data-model="safe-2200h-t">SAFE-2200H-T</div>
+        <div class="model-item" data-model="safe-1000td">SAFE-1000TD</div>
+        <div class="model-item" data-model="safe-1200td">SAFE-1200TD</div>
+        <div class="model-item" data-model="safe-1800td">SAFE-1800TD</div>
+        <div class="model-item" data-model="safe-2000td">SAFE-2000TD</div>
+        <div class="model-item" data-model="safe-2200td">SAFE-2200TD</div>
+        <div class="model-item" data-model="hps-300h">HPS-300H</div>
+        <div class="model-item" data-model="hps-500h">HPS-500H</div>
+        <div class="model-item" data-model="hps-750h">HPS-750H</div>
+        <div class="model-item" data-model="hps-1000h">HPS-1000H</div>
+        <div class="model-item" data-model="hps-1200h">HPS-1200H</div>
+        <div class="model-item" data-model="hps-1600h">HPS-1600H</div>
+        <div class="model-item" data-model="hps-1800h">HPS-1800H</div>
+        <div class="model-item" data-model="hps-2000h">HPS-2000H</div>
+        <div class="model-item" data-model="eco-6u">ECO-6U</div>
+        <div class="model-item" data-model="eco-9u">ECO-9U</div>
+        <div class="model-item" data-model="eco-14u">ECO-14U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 고정선반 <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="fs-d450">FS-D450</div>
+        <div class="model-item" data-model="fs-d500">FS-D500</div>
+        <div class="model-item" data-model="fs-d600">FS-D600</div>
+        <div class="model-item" data-model="fs-d750">FS-D750</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 전면선반 <span class="count">2개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="fs-ivory,black">FS-IVORY,BLACK</div>
+        <div class="model-item" data-model="fs-10inch">FS-10inch</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 슬라이드선반(중하중) <span class="count">2개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="ss-d600">SS-D600</div>
+        <div class="model-item" data-model="ss-d750">SS-D750</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 키보드 슬라이드선반 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="ks-d400">KS-D400</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 보안서랍장(툴박스) <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="dr-d350">DR-D350</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - LCD판넬 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="lcdp-ivory,black">LCDP-IVORY,BLACK</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 모니터(LED) <span class="count">2개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="exa-rp190">EXA-RP190</div>
+        <div class="model-item" data-model="exa-rp215">EXA-RP215</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 쿨링팬 <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="cf2-1u">CF2-1U</div>
+        <div class="model-item" data-model="cf4-1u">CF4-1U</div>
+        <div class="model-item" data-model="cf2-1u-lcd">CF2-1U-LCD</div>
+        <div class="model-item" data-model="cf4-1u-lcd">CF4-1U-LCD</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 블랭크판넬 <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="bp1u">BP1U</div>
+        <div class="model-item" data-model="bp2u">BP2U</div>
+        <div class="model-item" data-model="bp3u">BP3U</div>
+        <div class="model-item" data-model="bp4u">BP4U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 클립형 블랭크판넬 <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="bp1u-cl">BP1U-CL</div>
+        <div class="model-item" data-model="bp2u-cl">BP2U-CL</div>
+        <div class="model-item" data-model="bp3u-cl">BP3U-CL</div>
+        <div class="model-item" data-model="bp4u-cl">BP4U-CL</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 원터치 블랭크판넬 <span class="count">2개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="bp1u-pl">BP1U-PL</div>
+        <div class="model-item" data-model="bp2u-pl">BP2U-PL</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 엔트리판넬 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="ep1u">EP1U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 블러쉬판넬 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="br1u">BR1U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 110블록 판넬 <span class="count">2개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="110-panel 1u">110-PANEL 1U</div>
+        <div class="model-item" data-model="110-panel 2u">110-PANEL 2U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 탄기반 브라켓 <span class="count">2개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="탄기반브라켓 일반형">탄기반브라켓 일반형</div>
+        <div class="model-item" data-model="탄기반브라켓 가로형">탄기반브라켓 가로형</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 메니지먼트판넬 <span class="count">2개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="mp1u 돌출형">MP1U 돌출형</div>
+        <div class="model-item" data-model="mpd1u 덕트형">MPD1U 덕트형</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 점퍼 스루 2U <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="점퍼스루 2u">점퍼스루 2U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 후면케이블바 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="후면케이블바">후면케이블바</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 가이드앵글 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="ga-d750(500mm)">GA-D750(500mm)</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 전원공급장치 PDU 고용량 2M <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="pdu 6구 2m 16a 4000w">PDU 6구 2M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 8구 2m 16a 4000w">PDU 8구 2M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 10구 2m 16a 4000w">PDU 10구 2M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 14구 2m 16a 4000w">PDU 14구 2M 16A 4000W</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 전원공급장치 PDU 고용량 5M <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="pdu 6구 5m 16a 4000w">PDU 6구 5M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 8구 5m 16a 4000w">PDU 8구 5M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 10구 5m 16a 4000w">PDU 10구 5M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 14구 5m 16a 4000w">PDU 14구 5M 16A 4000W</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 멀티탭(PVC) <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="멀티탭 6구 1.5m">멀티탭 6구 1.5M</div>
+        <div class="model-item" data-model="멀티탭 8구 2.5m">멀티탭 8구 2.5M</div>
+        <div class="model-item" data-model="멀티탭 10구 2.5m">멀티탭 10구 2.5M</div>
+        <div class="model-item" data-model="멀티탭 14구 2.5m">멀티탭 14구 2.5M</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 케이지너트+볼트 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="m5 케이지너트 볼트">M5 케이지너트 볼트</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 케이지너트+볼트+와샤 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="m5 케이지너트 볼트 와샤">M5 케이지너트 볼트 와샤</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 슬림케이지너트+볼트 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="m5 슬림케이지너트 볼트">M5 슬림케이지너트 볼트</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 서버랙 본체 <span class="count">33개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="hps-36sl">HPS-36SL</div>
+        <div class="model-item" data-model="hps-12sp">HPS-12SP</div>
+        <div class="model-item" data-model="hps-22sp">HPS-22SP</div>
+        <div class="model-item" data-model="hps-35sp">HPS-35SP</div>
+        <div class="model-item" data-model="hps-40sp">HPS-40SP</div>
+        <div class="model-item" data-model="hps-22td">HPS-22TD</div>
+        <div class="model-item" data-model="hps-37td">HPS-37TD</div>
+        <div class="model-item" data-model="hps-42td">HPS-42TD</div>
+        <div class="model-item" data-model="hps-48td">HPS-48TD</div>
+        <div class="model-item" data-model="safe-590s">SAFE-590S</div>
+        <div class="model-item" data-model="safe-750s">SAFE-750S</div>
+        <div class="model-item" data-model="safe-1000s">SAFE-1000S</div>
+        <div class="model-item" data-model="safe-1200s">SAFE-1200S</div>
+        <div class="model-item" data-model="safe-1400s">SAFE-1400S</div>
+        <div class="model-item" data-model="safe-1600s">SAFE-1600S</div>
+        <div class="model-item" data-model="safe-1800s">SAFE-1800S</div>
+        <div class="model-item" data-model="safe-2000s">SAFE-2000S</div>
+        <div class="model-item" data-model="safe-2200s">SAFE-2200S</div>
+        <div class="model-item" data-model="safe-2000h">SAFE-2000H</div>
+        <div class="model-item" data-model="hps-590s">HPS-590S</div>
+        <div class="model-item" data-model="hps-750s">HPS-750S</div>
+        <div class="model-item" data-model="hps-1000s">HPS-1000S</div>
+        <div class="model-item" data-model="hps-1200s">HPS-1200S</div>
+        <div class="model-item" data-model="hps-1400s">HPS-1400S</div>
+        <div class="model-item" data-model="hps-1600s">HPS-1600S</div>
+        <div class="model-item" data-model="hps-1800s">HPS-1800S</div>
+        <div class="model-item" data-model="hps-2000s">HPS-2000S</div>
+        <div class="model-item" data-model="hps-2200s">HPS-2200S</div>
+        <div class="model-item" data-model="hps-1000td">HPS-1000TD</div>
+        <div class="model-item" data-model="hps-1200td">HPS-1200TD</div>
+        <div class="model-item" data-model="hps-1800td">HPS-1800TD</div>
+        <div class="model-item" data-model="hps-2000td">HPS-2000TD</div>
+        <div class="model-item" data-model="hps-2200td">HPS-2200TD</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 고정선반 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="fs-d1000">FS-D1000</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 전면선반 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="fs-ivory,black">FS-IVORY,BLACK</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 슬라이드선반 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="ss-d1000">SS-D1000</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 키보드 슬라이드선반 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="ks-d400">KS-D400</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 보안서랍장(툴박스) <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="dr-d350">DR-D350</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - LCD판넬 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="lcdp-ivory,black">LCDP-IVORY,BLACK</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 쿨링팬 <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="cf2-1u">CF2-1U</div>
+        <div class="model-item" data-model="cf4-1u">CF4-1U</div>
+        <div class="model-item" data-model="cf2-1u-lcd">CF2-1U-LCD</div>
+        <div class="model-item" data-model="cf4-1u-lcd">CF4-1U-LCD</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 블랭크판넬 <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="bp1u">BP1U</div>
+        <div class="model-item" data-model="bp2u">BP2U</div>
+        <div class="model-item" data-model="bp3u">BP3U</div>
+        <div class="model-item" data-model="bp4u">BP4U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 클립형 블랭크판넬 <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="bp1u-cl">BP1U-CL</div>
+        <div class="model-item" data-model="bp2u-cl">BP2U-CL</div>
+        <div class="model-item" data-model="bp3u-cl">BP3U-CL</div>
+        <div class="model-item" data-model="bp4u-cl">BP4U-CL</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 원터치 블랭크판넬 <span class="count">2개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="bp1u-pl">BP1U-PL</div>
+        <div class="model-item" data-model="bp2u-pl">BP2U-PL</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 엔트리판넬 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="ep1u">EP1U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 블러쉬판넬 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="br1u">BR1U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 가이드앵글 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="ga-d1000(650mm)">GA-D1000(650mm)</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 전원공급장치 PDU 고용량 2M <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="pdu 6구 2m 16a 4000w">PDU 6구 2M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 8구 2m 16a 4000w">PDU 8구 2M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 10구 2m 16a 4000w">PDU 10구 2M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 14구 2m 16a 4000w">PDU 14구 2M 16A 4000W</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 전원공급장치 PDU 고용량 5M <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="pdu 6구 5m 16a 4000w">PDU 6구 5M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 8구 5m 16a 4000w">PDU 8구 5M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 10구 5m 16a 4000w">PDU 10구 5M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 14구 5m 16a 4000w">PDU 14구 5M 16A 4000W</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 멀티탭(PVC) <span class="count">3개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="멀티탭 8구 2.5m">멀티탭 8구 2.5M</div>
+        <div class="model-item" data-model="멀티탭 10구 2.5m">멀티탭 10구 2.5M</div>
+        <div class="model-item" data-model="멀티탭 14구 2.5m">멀티탭 14구 2.5M</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 케이지너트+볼트 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="m5 케이지너트 볼트">M5 케이지너트 볼트</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 케이지너트+볼트+와샤 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="m5 케이지너트 볼트 와샤">M5 케이지너트 볼트 와샤</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 슬림케이지너트+볼트 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="m5 슬림케이지너트 볼트">M5 슬림케이지너트 볼트</div>
+      </div>
+    </div>
+  </div>
+
 <div class="section" id="section-all">
     <div class="brand-header soltech">
       <h2>솔텍 (Soltech)</h2>
@@ -16136,6 +16549,411 @@
     </div>
 
 
+    <!-- 세이프네트웍(SAFE NETWORK) — 전체 검색용 (엑셀 추가) -->
+    <div class="brand-header safenetwork" style="margin-top:2rem;">
+      <h2>세이프네트웍 (SAFE NETWORK)</h2>
+      <span class="count">169개</span>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 랙 본체 <span class="count">46개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="safe-6u">SAFE-6U</div>
+        <div class="model-item" data-model="safe-9u">SAFE-9U</div>
+        <div class="model-item" data-model="safe-4soho">SAFE-4SOHO</div>
+        <div class="model-item" data-model="safe-6soho">SAFE-6SOHO</div>
+        <div class="model-item" data-model="safe-9soho">SAFE-9SOHO</div>
+        <div class="model-item" data-model="hps-er5u (세로형랙)">HPS-ER5U (세로형랙)</div>
+        <div class="model-item" data-model="hps-er9u (세로형랙)">HPS-ER9U (세로형랙)</div>
+        <div class="model-item" data-model="safe-280h (cctv랙)">SAFE-280H (CCTV랙)</div>
+        <div class="model-item" data-model="hps-280h (cctv랙)">HPS-280H (CCTV랙)</div>
+        <div class="model-item" data-model="safe-09sp">SAFE-09SP</div>
+        <div class="model-item" data-model="safe-300h">SAFE-300H</div>
+        <div class="model-item" data-model="safe-500h">SAFE-500H</div>
+        <div class="model-item" data-model="safe-750h">SAFE-750H</div>
+        <div class="model-item" data-model="safe-1000h">SAFE-1000H</div>
+        <div class="model-item" data-model="safe-1200h">SAFE-1200H</div>
+        <div class="model-item" data-model="safe-1400h">SAFE-1400H</div>
+        <div class="model-item" data-model="safe-1600h">SAFE-1600H</div>
+        <div class="model-item" data-model="safe-1800h">SAFE-1800H</div>
+        <div class="model-item" data-model="safe-2000h">SAFE-2000H</div>
+        <div class="model-item" data-model="safe-2200h">SAFE-2200H</div>
+        <div class="model-item" data-model="safe-1200h-lcd">SAFE-1200H-LCD</div>
+        <div class="model-item" data-model="safe-1800h-lcd">SAFE-1800H-LCD</div>
+        <div class="model-item" data-model="safe-2000h-lcd">SAFE-2000H-LCD</div>
+        <div class="model-item" data-model="safe-1000h-t">SAFE-1000H-T</div>
+        <div class="model-item" data-model="safe-1200h-t">SAFE-1200H-T</div>
+        <div class="model-item" data-model="safe-1400h-t">SAFE-1400H-T</div>
+        <div class="model-item" data-model="safe-1600h-t">SAFE-1600H-T</div>
+        <div class="model-item" data-model="safe-1800h-t">SAFE-1800H-T</div>
+        <div class="model-item" data-model="safe-2000h-t">SAFE-2000H-T</div>
+        <div class="model-item" data-model="safe-2200h-t">SAFE-2200H-T</div>
+        <div class="model-item" data-model="safe-1000td">SAFE-1000TD</div>
+        <div class="model-item" data-model="safe-1200td">SAFE-1200TD</div>
+        <div class="model-item" data-model="safe-1800td">SAFE-1800TD</div>
+        <div class="model-item" data-model="safe-2000td">SAFE-2000TD</div>
+        <div class="model-item" data-model="safe-2200td">SAFE-2200TD</div>
+        <div class="model-item" data-model="hps-300h">HPS-300H</div>
+        <div class="model-item" data-model="hps-500h">HPS-500H</div>
+        <div class="model-item" data-model="hps-750h">HPS-750H</div>
+        <div class="model-item" data-model="hps-1000h">HPS-1000H</div>
+        <div class="model-item" data-model="hps-1200h">HPS-1200H</div>
+        <div class="model-item" data-model="hps-1600h">HPS-1600H</div>
+        <div class="model-item" data-model="hps-1800h">HPS-1800H</div>
+        <div class="model-item" data-model="hps-2000h">HPS-2000H</div>
+        <div class="model-item" data-model="eco-6u">ECO-6U</div>
+        <div class="model-item" data-model="eco-9u">ECO-9U</div>
+        <div class="model-item" data-model="eco-14u">ECO-14U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 고정선반 <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="fs-d450">FS-D450</div>
+        <div class="model-item" data-model="fs-d500">FS-D500</div>
+        <div class="model-item" data-model="fs-d600">FS-D600</div>
+        <div class="model-item" data-model="fs-d750">FS-D750</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 전면선반 <span class="count">2개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="fs-ivory,black">FS-IVORY,BLACK</div>
+        <div class="model-item" data-model="fs-10inch">FS-10inch</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 슬라이드선반(중하중) <span class="count">2개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="ss-d600">SS-D600</div>
+        <div class="model-item" data-model="ss-d750">SS-D750</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 키보드 슬라이드선반 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="ks-d400">KS-D400</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 보안서랍장(툴박스) <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="dr-d350">DR-D350</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - LCD판넬 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="lcdp-ivory,black">LCDP-IVORY,BLACK</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 모니터(LED) <span class="count">2개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="exa-rp190">EXA-RP190</div>
+        <div class="model-item" data-model="exa-rp215">EXA-RP215</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 쿨링팬 <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="cf2-1u">CF2-1U</div>
+        <div class="model-item" data-model="cf4-1u">CF4-1U</div>
+        <div class="model-item" data-model="cf2-1u-lcd">CF2-1U-LCD</div>
+        <div class="model-item" data-model="cf4-1u-lcd">CF4-1U-LCD</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 블랭크판넬 <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="bp1u">BP1U</div>
+        <div class="model-item" data-model="bp2u">BP2U</div>
+        <div class="model-item" data-model="bp3u">BP3U</div>
+        <div class="model-item" data-model="bp4u">BP4U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 클립형 블랭크판넬 <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="bp1u-cl">BP1U-CL</div>
+        <div class="model-item" data-model="bp2u-cl">BP2U-CL</div>
+        <div class="model-item" data-model="bp3u-cl">BP3U-CL</div>
+        <div class="model-item" data-model="bp4u-cl">BP4U-CL</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 원터치 블랭크판넬 <span class="count">2개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="bp1u-pl">BP1U-PL</div>
+        <div class="model-item" data-model="bp2u-pl">BP2U-PL</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 엔트리판넬 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="ep1u">EP1U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 블러쉬판넬 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="br1u">BR1U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 110블록 판넬 <span class="count">2개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="110-panel 1u">110-PANEL 1U</div>
+        <div class="model-item" data-model="110-panel 2u">110-PANEL 2U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 탄기반 브라켓 <span class="count">2개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="탄기반브라켓 일반형">탄기반브라켓 일반형</div>
+        <div class="model-item" data-model="탄기반브라켓 가로형">탄기반브라켓 가로형</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 메니지먼트판넬 <span class="count">2개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="mp1u 돌출형">MP1U 돌출형</div>
+        <div class="model-item" data-model="mpd1u 덕트형">MPD1U 덕트형</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 점퍼 스루 2U <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="점퍼스루 2u">점퍼스루 2U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 후면케이블바 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="후면케이블바">후면케이블바</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 가이드앵글 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="ga-d750(500mm)">GA-D750(500mm)</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 전원공급장치 PDU 고용량 2M <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="pdu 6구 2m 16a 4000w">PDU 6구 2M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 8구 2m 16a 4000w">PDU 8구 2M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 10구 2m 16a 4000w">PDU 10구 2M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 14구 2m 16a 4000w">PDU 14구 2M 16A 4000W</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 전원공급장치 PDU 고용량 5M <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="pdu 6구 5m 16a 4000w">PDU 6구 5M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 8구 5m 16a 4000w">PDU 8구 5M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 10구 5m 16a 4000w">PDU 10구 5M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 14구 5m 16a 4000w">PDU 14구 5M 16A 4000W</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 멀티탭(PVC) <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="멀티탭 6구 1.5m">멀티탭 6구 1.5M</div>
+        <div class="model-item" data-model="멀티탭 8구 2.5m">멀티탭 8구 2.5M</div>
+        <div class="model-item" data-model="멀티탭 10구 2.5m">멀티탭 10구 2.5M</div>
+        <div class="model-item" data-model="멀티탭 14구 2.5m">멀티탭 14구 2.5M</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 케이지너트+볼트 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="m5 케이지너트 볼트">M5 케이지너트 볼트</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 케이지너트+볼트+와샤 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="m5 케이지너트 볼트 와샤">M5 케이지너트 볼트 와샤</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🗄️ 허브랙 - 슬림케이지너트+볼트 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="m5 슬림케이지너트 볼트">M5 슬림케이지너트 볼트</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 서버랙 본체 <span class="count">33개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="hps-36sl">HPS-36SL</div>
+        <div class="model-item" data-model="hps-12sp">HPS-12SP</div>
+        <div class="model-item" data-model="hps-22sp">HPS-22SP</div>
+        <div class="model-item" data-model="hps-35sp">HPS-35SP</div>
+        <div class="model-item" data-model="hps-40sp">HPS-40SP</div>
+        <div class="model-item" data-model="hps-22td">HPS-22TD</div>
+        <div class="model-item" data-model="hps-37td">HPS-37TD</div>
+        <div class="model-item" data-model="hps-42td">HPS-42TD</div>
+        <div class="model-item" data-model="hps-48td">HPS-48TD</div>
+        <div class="model-item" data-model="safe-590s">SAFE-590S</div>
+        <div class="model-item" data-model="safe-750s">SAFE-750S</div>
+        <div class="model-item" data-model="safe-1000s">SAFE-1000S</div>
+        <div class="model-item" data-model="safe-1200s">SAFE-1200S</div>
+        <div class="model-item" data-model="safe-1400s">SAFE-1400S</div>
+        <div class="model-item" data-model="safe-1600s">SAFE-1600S</div>
+        <div class="model-item" data-model="safe-1800s">SAFE-1800S</div>
+        <div class="model-item" data-model="safe-2000s">SAFE-2000S</div>
+        <div class="model-item" data-model="safe-2200s">SAFE-2200S</div>
+        <div class="model-item" data-model="safe-2000h">SAFE-2000H</div>
+        <div class="model-item" data-model="hps-590s">HPS-590S</div>
+        <div class="model-item" data-model="hps-750s">HPS-750S</div>
+        <div class="model-item" data-model="hps-1000s">HPS-1000S</div>
+        <div class="model-item" data-model="hps-1200s">HPS-1200S</div>
+        <div class="model-item" data-model="hps-1400s">HPS-1400S</div>
+        <div class="model-item" data-model="hps-1600s">HPS-1600S</div>
+        <div class="model-item" data-model="hps-1800s">HPS-1800S</div>
+        <div class="model-item" data-model="hps-2000s">HPS-2000S</div>
+        <div class="model-item" data-model="hps-2200s">HPS-2200S</div>
+        <div class="model-item" data-model="hps-1000td">HPS-1000TD</div>
+        <div class="model-item" data-model="hps-1200td">HPS-1200TD</div>
+        <div class="model-item" data-model="hps-1800td">HPS-1800TD</div>
+        <div class="model-item" data-model="hps-2000td">HPS-2000TD</div>
+        <div class="model-item" data-model="hps-2200td">HPS-2200TD</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 고정선반 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="fs-d1000">FS-D1000</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 전면선반 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="fs-ivory,black">FS-IVORY,BLACK</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 슬라이드선반 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="ss-d1000">SS-D1000</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 키보드 슬라이드선반 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="ks-d400">KS-D400</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 보안서랍장(툴박스) <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="dr-d350">DR-D350</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - LCD판넬 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="lcdp-ivory,black">LCDP-IVORY,BLACK</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 쿨링팬 <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="cf2-1u">CF2-1U</div>
+        <div class="model-item" data-model="cf4-1u">CF4-1U</div>
+        <div class="model-item" data-model="cf2-1u-lcd">CF2-1U-LCD</div>
+        <div class="model-item" data-model="cf4-1u-lcd">CF4-1U-LCD</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 블랭크판넬 <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="bp1u">BP1U</div>
+        <div class="model-item" data-model="bp2u">BP2U</div>
+        <div class="model-item" data-model="bp3u">BP3U</div>
+        <div class="model-item" data-model="bp4u">BP4U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 클립형 블랭크판넬 <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="bp1u-cl">BP1U-CL</div>
+        <div class="model-item" data-model="bp2u-cl">BP2U-CL</div>
+        <div class="model-item" data-model="bp3u-cl">BP3U-CL</div>
+        <div class="model-item" data-model="bp4u-cl">BP4U-CL</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 원터치 블랭크판넬 <span class="count">2개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="bp1u-pl">BP1U-PL</div>
+        <div class="model-item" data-model="bp2u-pl">BP2U-PL</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 엔트리판넬 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="ep1u">EP1U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 블러쉬판넬 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="br1u">BR1U</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 가이드앵글 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="ga-d1000(650mm)">GA-D1000(650mm)</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 전원공급장치 PDU 고용량 2M <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="pdu 6구 2m 16a 4000w">PDU 6구 2M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 8구 2m 16a 4000w">PDU 8구 2M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 10구 2m 16a 4000w">PDU 10구 2M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 14구 2m 16a 4000w">PDU 14구 2M 16A 4000W</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 전원공급장치 PDU 고용량 5M <span class="count">4개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="pdu 6구 5m 16a 4000w">PDU 6구 5M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 8구 5m 16a 4000w">PDU 8구 5M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 10구 5m 16a 4000w">PDU 10구 5M 16A 4000W</div>
+        <div class="model-item" data-model="pdu 14구 5m 16a 4000w">PDU 14구 5M 16A 4000W</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 멀티탭(PVC) <span class="count">3개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="멀티탭 8구 2.5m">멀티탭 8구 2.5M</div>
+        <div class="model-item" data-model="멀티탭 10구 2.5m">멀티탭 10구 2.5M</div>
+        <div class="model-item" data-model="멀티탭 14구 2.5m">멀티탭 14구 2.5M</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 케이지너트+볼트 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="m5 케이지너트 볼트">M5 케이지너트 볼트</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 케이지너트+볼트+와샤 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="m5 케이지너트 볼트 와샤">M5 케이지너트 볼트 와샤</div>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h3>🖥️ 서버랙 - 슬림케이지너트+볼트 <span class="count">1개</span></h3>
+      <div class="model-grid">
+        <div class="model-item" data-model="m5 슬림케이지너트 볼트">M5 슬림케이지너트 볼트</div>
+      </div>
+    </div>
+
   </div>
 
 
@@ -16295,19 +17113,28 @@
   }
   function getBrandName(el) {
     try {
-      let node = el.closest('.sub-section') || el.closest('.model-grid');
-      let cur = node ? node.previousElementSibling : null;
-      while (cur) {
-        if (cur.classList && cur.classList.contains('brand-header')) {
-          const h2 = cur.querySelector('h2');
-          return h2 ? h2.textContent.trim() : '';
+      // FIX: 중첩 sub-section에서도 동작하도록 부모로 올라가며 이전 형제 중 brand-header를 찾는다.
+      // section-all에서 첫 번째 brand-header(솔텍)를 반환하는 기존 폴백은 제거했다.
+      let node = el;
+      while (node) {
+        let cur = node.previousElementSibling;
+        while (cur) {
+          if (cur.classList && cur.classList.contains('brand-header')) {
+            const h2 = cur.querySelector('h2');
+            return h2 ? h2.textContent.trim() : '';
+          }
+          cur = cur.previousElementSibling;
         }
-        cur = cur.previousElementSibling;
-      }
-      const section = el.closest('.section');
-      if (section) {
-        const h2 = section.querySelector('.brand-header h2');
-        if (h2) return h2.textContent.trim();
+        node = node.parentElement;
+        if (node && node.classList && node.classList.contains('section')) {
+          // 개별 섹션(브랜드 1개)일 때만 섹션 내 헤더를 폴백으로 사용
+          const headers = node.querySelectorAll('.brand-header');
+          if (headers.length === 1) {
+            const h2 = headers[0].querySelector('h2');
+            if (h2) return h2.textContent.trim();
+          }
+          break;
+        }
       }
     } catch (e) {}
     return '';
